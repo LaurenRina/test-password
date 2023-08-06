@@ -1,20 +1,23 @@
 <div class="content" role="main">
   <h1>Welcome to password checker app!</h1>
 
-  <div>
+  <form [formGroup]="passwordForm">
     <label for="password-input-field" class="">Enter Password Here: </label>
     <input
       type="password"
+      value="ss"
       id="password-input-field"
-      [(ngModel)]="passwordValue"
+      formControlName="password"
     />
-  </div>
+  </form>
 
   <br />
   <br />
   <br />
 
   <div>
-    <password-checker [currentPasswordValue]="passwordValue"></password-checker>
+    <password-checker
+      [currentPasswordValue]="passwordForm.value.password!"
+    ></password-checker>
   </div>
 </div>
